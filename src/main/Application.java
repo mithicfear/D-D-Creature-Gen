@@ -7,39 +7,30 @@
  */
 package main;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 
 public class Application {
 	
-	static JButton beginButton = new JButton("Begin");
-	static JButton exitButton = new JButton("Exit");
-	static boolean running = true;
-	
-	public Application(){
+	public Application(){ 	//This is the list of stages the program will go through in it's lifespan.
 		initialize();
 		update();
 	}
 	
+	/** Creates JFrame, JPanels, and combo boxes. */
 	public static void initialize() {
 		JFrame window = new JFrame("D&D Stuff!");
 		window.setSize(800, 600);
 		window.setLocationRelativeTo(null);
-		
-		beginButton.setSize(100, 25);
-		beginButton.setLocation(800 / 2, 600 / 2);
-		
-		exitButton.setSize(100, 25);
-		exitButton.setLocation(800 / 2, 600 / 2);
-		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JPanel top = new JPanel();		//Using JPanels to put uneditable combo boxes on the screen.
+		JPanel mid = new JPanel();
+		JPanel bot = new JPanel();
+		top.setBounds(0, 0, 800, 200);
+		mid.setBounds(0, 200, 800, 200);
+		bot.setBounds(0, 400, 800, 200);
 		
-		window.add(beginButton);
-		window.add(exitButton);
 		window.setVisible(true);
 	}
 	
@@ -47,20 +38,7 @@ public class Application {
 		
 	}
 	
-	protected static void checkButtons() {
-		exitButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
-		
-		beginButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				collectData();
-			}
-		});
-	}
-	
+	/** This gets input, may make class for this. */
 	protected static void collectData() {
 		
 	}

@@ -13,8 +13,8 @@ public class Ability_Score {
 		//TODO Randomly Gen ability scores to fill them in.
 	}
 	public Ability_Score(int str,int con,int dex, int intel,int wis,int cha){
-		STR=str;
-		CON= con;
+		STR = str;
+		CON = con;
 		DEX = dex;
 		INT = intel;
 		WIS = wis;
