@@ -2,12 +2,12 @@ package creature;
 
 public class Ability_Score {
 	
-	int STR;
-	int CON;
-	int DEX;
-	int INT;
-	int WIS;
-	int CHA;
+	public int STR;
+	public int CON;
+	public int DEX;
+	public int INT;
+	public int WIS;
+	public int CHA;
 	
 	public Ability_Score(){
 		//TODO Randomly Gen ability scores to fill them in.
