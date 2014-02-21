@@ -7,6 +7,7 @@
  */
 package main;
 
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -30,7 +31,18 @@ public class Application {
 		top.setBounds(0, 0, 800, 200);
 		mid.setBounds(0, 200, 800, 200);
 		bot.setBounds(0, 400, 800, 200);
-		
+		String[] levelNums = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",	//Set up arrays for combo boxes.
+			"12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+			"25", "26", "27", "28", "29", "30", "31", "32"};		//Levels 1-32 (hehehe), Strings for all class and race names.
+		String[] classNames = {"Ardent", "Avenger", "Barbarian", "Bard", "Battlemind",
+			"Cleric", "Druid", "Fighter", "Invoker","Monk", "Paladin", "Psion", "Ranger",
+			"Rogue", "Runepriest", "Seeker","Shaman", "Sorcerer", "Warden", "Warlock", "Warlord", "Wizard"};
+		String[] raceNames = {"Deva", "Dragonborn", "Dwarf", "Eladrin", "Elf", "Githzerai",
+			"Gnome", "Goliath", "Half-Elf", "Half-Orc", "Halfling", "Human", "Minotaur",
+			"Shardmind", "Shifter", "Tiefling", "Wilden", };
+		JComboBox races = new JComboBox(raceNames);
+		JComboBox classes = new JComboBox(classNames);
+		JComboBox levels = new JComboBox(levelNums);
 		window.setVisible(true);
 	}
 	
