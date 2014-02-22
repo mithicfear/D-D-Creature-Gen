@@ -24,7 +24,7 @@ public class Creature {
 		Class = c.toString();
 		Level = l.toString();
 		
-		stats = new Ability_Score();
+		stats = new Ability_Score(Class);
 		
 		calculateStats();
 		displayStats();

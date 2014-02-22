@@ -54,8 +54,8 @@ public class Application {
 			"Rogue", "Runepriest", "Seeker","Shaman", "Sorcerer", "Warden", "Warlock", "Warlord", "Wizard"};
 		String[] raceNames = {"Deva", "Dragonborn", "Dwarf", "Eladrin", "Elf", "Githzerai",
 			"Gnome", "Goliath", "Half-Elf", "Half-Orc", "Halfling", "Human", "Minotaur",
-			"Shardmind", "Shifter", "Tiefling", "Wilden", };
-		races.addItem(raceNames);
+			"Shardmind", "Shifter", "Tiefling", "Wilden"};
+		races.addItem(raceNames);						//Fill the combo boxes with the info.
 		classes.addItem(classNames);
 		levels.addItem(levelNums);
 		races.setEditable(false);						//Make the boxes uneditable.
