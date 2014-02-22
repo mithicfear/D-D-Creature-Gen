@@ -2,12 +2,12 @@ package creature;
 
 public class Ability_Score {
 	
-	int STR;
-	int CON;
-	int DEX;
-	int INT;
-	int WIS;
-	int CHA;
+	public int STR;
+	public int CON;
+	public int DEX;
+	public int INT;
+	public int WIS;
+	public int CHA;
 	
 	public Ability_Score(String c){
 		if(c.equals(""))

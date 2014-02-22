@@ -7,8 +7,8 @@ public class Creature {
 	String Name;
 	String Alignment;
 	String Size;
-	String Level;
 	
+	int Level;
 	int Health;
 	int AC;
 	int FORT;
@@ -18,11 +18,16 @@ public class Creature {
 	int pass_Perception;
 	
 	Ability_Score stats;
-	
+	/**
+	 * This constructor is not what I'm planing on using for creature.
+	 * @param r	Race
+	 * @param c Class
+	 * @param l Level
+	 */
 	public Creature(Object r, Object c, Object l) {
 		Race = r.toString();
 		Class = c.toString();
-		Level = l.toString();
+		//Level = l.toString().
 		
 		stats = new Ability_Score(Class);
 		
@@ -38,6 +43,19 @@ public class Creature {
 	/** This method exists to display everything that the DM will need for this NPC. */
 	protected void displayStats() {
 		
+	}
+	
+	public Creature(Ability_Score abs,int race_index,int class_index,int level){
+		
+		if(abs == null){
+			abs = new Ability_Score();
+		}else{
+			stats = abs;
+		}
+		if(level <=0){
+			level =1;
+		}
+		Level = level;
 	}
 	
 }
