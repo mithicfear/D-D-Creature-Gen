@@ -63,7 +63,7 @@ public class Application {
 		levels.setEditable(false);
 		races.addActionListener((ActionListener) this);	//Give the boxes ActionListeners.
 		classes.addActionListener((ActionListener) this); //TODO James is a dumb, Application can't be an action listener... It doesn't implement it...
-		levels.addActionListener((ActionListener) this);
+		levels.addActionListener((ActionListener) this);  //TODO I was just adding an ActionListener to these... I imported them, which allows use, yes?
 		top.add(races);									//Add the boxes to the JPanels.
 		mid.add(classes);
 		bot.add(levels);

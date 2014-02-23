@@ -9,8 +9,12 @@ public class Ability_Score {
 	public int WIS;
 	public int CHA;
 	
+	public Ability_Score() {
+		
+	}
+	
 	public Ability_Score(String c){
-		if(c.equals(""))
+		
 	}
 	
 	public Ability_Score(int str,int con,int dex, int intel,int wis,int cha){
