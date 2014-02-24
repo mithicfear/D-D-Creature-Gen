@@ -24,7 +24,7 @@ public class Application extends JFrame implements ActionListener{
 	 */
 	private static final long serialVersionUID = 2784293355199367742L;
 	
-	JComboBox races = new JComboBox(Race.races);		//Define the combo boxes.
+	JComboBox<Race> races = new JComboBox<Race>();		//Define the combo boxes.
 	JComboBox classes = new JComboBox();
 	JComboBox levels = new JComboBox();
 	
@@ -54,21 +54,27 @@ public class Application extends JFrame implements ActionListener{
 		String[] raceNames = {"Deva", "Dragonborn", "Dwarf", "Eladrin", "Elf", "Githzerai",
 			"Gnome", "Goliath", "Half-Elf", "Half-Orc", "Halfling", "Human", "Minotaur",
 			"Shardmind", "Shifter", "Tiefling", "Wilden"};
-		races.addItem(raceNames);					//Fill the combo boxes with the info.
-		classes.addItem(classNames);
-		levels.addItem(levelNums);
+		for(Race r:Race.races){
+			races.addItem(r);	
+		}
+		for(String s:levelNums){
+			levels.addItem(s);
+		}
+		for(String s:classNames){					//Fill the combo boxes with the info.
+		classes.addItem(s);
+		}
 		add(races);
 		add(classes);
-		add(races);
+		add(levels);
 		races.setEditable(false);						//Make the boxes uneditable.
 		classes.setEditable(false);
 		levels.setEditable(false);
 		races.addActionListener((ActionListener) this);	//Give the boxes ActionListeners.
 		classes.addActionListener((ActionListener) this); //TODO James is a dumb, Application can't be an action listener... It doesn't implement it...
 		levels.addActionListener((ActionListener) this);  //TODO NOPE YOU WERE TOTALLY CORRECT I JUST SUCK
-		races.setBounds(400, 100, 100, 60);
-		classes.setBounds(400, 300, 100, 60);
-		levels.setBounds(400, 500, 100, 60);
+		races.setBounds(400, 100, 100, 20);
+		classes.setBounds(400, 200, 100, 20);
+		levels.setBounds(400, 300, 100, 20);
 		races.setVisible(true);
 		classes.setVisible(true);
 		levels.setVisible(true);

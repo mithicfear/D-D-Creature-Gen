@@ -20,6 +20,7 @@ public abstract class Race {
 		this.Mods = mods;
 	}
 	
+	@Override
 	public String toString(){
 		return Name;
 	}
