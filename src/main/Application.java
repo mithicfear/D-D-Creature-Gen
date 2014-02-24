@@ -17,7 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class Application {
+public class Application implements ActionListener{
 	
 	JComboBox races = new JComboBox();		//Define the combo boxes.
 	JComboBox classes = new JComboBox();
@@ -54,8 +54,8 @@ public class Application {
 			"Rogue", "Runepriest", "Seeker","Shaman", "Sorcerer", "Warden", "Warlock", "Warlord", "Wizard"};
 		String[] raceNames = {"Deva", "Dragonborn", "Dwarf", "Eladrin", "Elf", "Githzerai",
 			"Gnome", "Goliath", "Half-Elf", "Half-Orc", "Halfling", "Human", "Minotaur",
-			"Shardmind", "Shifter", "Tiefling", "Wilden", };
-		races.addItem(raceNames);
+			"Shardmind", "Shifter", "Tiefling", "Wilden"};
+		races.addItem(raceNames);						//Fill the combo boxes with the info.
 		classes.addItem(classNames);
 		levels.addItem(levelNums);
 		races.setEditable(false);						//Make the boxes uneditable.
@@ -63,14 +63,14 @@ public class Application {
 		levels.setEditable(false);
 		races.addActionListener((ActionListener) this);	//Give the boxes ActionListeners.
 		classes.addActionListener((ActionListener) this); //TODO James is a dumb, Application can't be an action listener... It doesn't implement it...
-		levels.addActionListener((ActionListener) this);
+		levels.addActionListener((ActionListener) this);  //TODO NOPE YOU WERE TOTALLY CORRECT I JUST SUCK
 		top.add(races);									//Add the boxes to the JPanels.
 		mid.add(classes);
 		bot.add(levels);
 	}
 	
 	/** This method reads what is in the boxes, and then creates a new creature based upon that information. */
-	protected void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {
 		JComboBox wat = (JComboBox)e.getSource();
 		Object r = null;
 		Object c = null;
