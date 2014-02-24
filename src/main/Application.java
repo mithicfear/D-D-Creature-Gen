@@ -38,10 +38,16 @@ public class Application implements ActionListener{
 		window.setSize(800, 600);
 		window.setLocationRelativeTo(null);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.add(top);
+		window.add(mid);
+		window.add(bot);
 		top.setBounds(0, 0, 800, 200);
 		mid.setBounds(0, 200, 800, 200);
 		bot.setBounds(0, 400, 800, 200);
+		top.setVisible(true);
 		window.setVisible(true);
+	
+		
 	}
 	
 	/** This method fills the boxes with information, */
