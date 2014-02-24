@@ -8,40 +8,39 @@
 package main;
 
 import creature.Creature;
+import creature.races.Race;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 
-public class Application implements ActionListener{
+public class Application extends JFrame implements ActionListener{
 	
-	JComboBox races = new JComboBox();		//Define the combo boxes.
+	/**
+	 * SERIAL NUMBAH
+	 */
+	private static final long serialVersionUID = 2784293355199367742L;
+	
+	JComboBox races = new JComboBox(Race.races);		//Define the combo boxes.
 	JComboBox classes = new JComboBox();
 	JComboBox levels = new JComboBox();
-	static JFrame window = new JFrame("D&D Stuff!"); //Define the JFrame.
-	static JPanel top = new JPanel();		//Define JPanels to put uneditable combo boxes on the screen.
-	static JPanel mid = new JPanel();
-	static JPanel bot = new JPanel();
 	
 	public Application(){ 	//This is the list of stages the program will go through in it's lifespan.
+		super("D&D Stuff!");
 		initializeFrame();
 		initializeBoxes();
 	}
 	
 	/** Creates JFrame, JPanels, and combo boxes. */
-	public static void initializeFrame() {
-		
-		window.setSize(800, 600);
-		window.setLocationRelativeTo(null);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		top.setBounds(0, 0, 800, 200);
-		mid.setBounds(0, 200, 800, 200);
-		bot.setBounds(0, 400, 800, 200);
-		window.setVisible(true);
+	public  void initializeFrame() {
+		setSize(800, 600);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		setLayout(null);	
 	}
 	
 	/** This method fills the boxes with information, */
@@ -55,18 +54,24 @@ public class Application implements ActionListener{
 		String[] raceNames = {"Deva", "Dragonborn", "Dwarf", "Eladrin", "Elf", "Githzerai",
 			"Gnome", "Goliath", "Half-Elf", "Half-Orc", "Halfling", "Human", "Minotaur",
 			"Shardmind", "Shifter", "Tiefling", "Wilden"};
-		races.addItem(raceNames);						//Fill the combo boxes with the info.
+		races.addItem(raceNames);					//Fill the combo boxes with the info.
 		classes.addItem(classNames);
 		levels.addItem(levelNums);
+		add(races);
+		add(classes);
+		add(races);
 		races.setEditable(false);						//Make the boxes uneditable.
 		classes.setEditable(false);
 		levels.setEditable(false);
 		races.addActionListener((ActionListener) this);	//Give the boxes ActionListeners.
 		classes.addActionListener((ActionListener) this); //TODO James is a dumb, Application can't be an action listener... It doesn't implement it...
 		levels.addActionListener((ActionListener) this);  //TODO NOPE YOU WERE TOTALLY CORRECT I JUST SUCK
-		top.add(races);									//Add the boxes to the JPanels.
-		mid.add(classes);
-		bot.add(levels);
+		races.setBounds(400, 100, 100, 60);
+		classes.setBounds(400, 300, 100, 60);
+		levels.setBounds(400, 500, 100, 60);
+		races.setVisible(true);
+		classes.setVisible(true);
+		levels.setVisible(true);
 	}
 	
 	/** This method reads what is in the boxes, and then creates a new creature based upon that information. */
