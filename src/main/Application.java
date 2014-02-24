@@ -24,7 +24,7 @@ public class Application extends JFrame implements ActionListener{
 	 */
 	private static final long serialVersionUID = 2784293355199367742L;
 	
-	JComboBox<Race> races = new JComboBox<Race>();		//Define the combo boxes.
+	JComboBox<String> races = new JComboBox<String>();		//Define the combo boxes.
 	JComboBox classes = new JComboBox();
 	JComboBox levels = new JComboBox();
 	
@@ -54,14 +54,14 @@ public class Application extends JFrame implements ActionListener{
 		String[] raceNames = {"Deva", "Dragonborn", "Dwarf", "Eladrin", "Elf", "Githzerai",
 			"Gnome", "Goliath", "Half-Elf", "Half-Orc", "Halfling", "Human", "Minotaur",
 			"Shardmind", "Shifter", "Tiefling", "Wilden"};
-		for(Race r:Race.races){
+		for(String r: raceNames){
 			races.addItem(r);	
 		}
 		for(String s:levelNums){
 			levels.addItem(s);
 		}
 		for(String s:classNames){					//Fill the combo boxes with the info.
-		classes.addItem(s);
+			classes.addItem(s);
 		}
 		add(races);
 		add(classes);
