@@ -24,12 +24,9 @@ public class Creature {
 	 * @param c Class
 	 * @param l Level
 	 */
-	public Creature(Object r, Object c, Object l) {
-		//Race = r.toString();
-		//Class = c.toString();
-		//Level = l.toString().
+	public Creature(String r, String c, String l) {
 		
-		stats = new Ability_Score(Class);
+		stats = new Ability_Score(Race, Class, Level); //LEVEL IS ALREADY AN INT! :D
 		
 		calculateStats();
 		displayStats();

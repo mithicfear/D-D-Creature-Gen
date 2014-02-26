@@ -13,8 +13,8 @@ public class Ability_Score {
 		
 	}
 	
-	public Ability_Score(String c){
-		
+	public Ability_Score(String r, String c, int l){
+		//if (c.equals("Rogue") || ("") || ("") || (""))
 	}
 	/**
 	 * 
