@@ -7,6 +7,8 @@
  */
 package creature;
 
+import creature.races.Race;
+
 public class Ability_Score {
 	
 	/**
@@ -59,7 +61,8 @@ public class Ability_Score {
 		}
 		
 		scoreArr[0] = scores[0];
-			
+		
+		Race.getBonus(scoreArr);
 		return scoreArr;
 	}
 	
@@ -79,7 +82,8 @@ public class Ability_Score {
 		}
 		
 		scoreArr[1] = scores[0];
-			
+		
+		Race.getBonus(scoreArr);
 		return scoreArr;
 	}
 	
@@ -99,7 +103,8 @@ public class Ability_Score {
 		}
 		
 		scoreArr[2] = scores[0];
-			
+		
+		Race.getBonus(scoreArr);
 		return scoreArr;
 	}
 	
@@ -119,7 +124,8 @@ public class Ability_Score {
 		}
 		
 		scoreArr[3] = scores[0];
-			
+		
+		Race.getBonus(scoreArr);
 		return scoreArr;
 	}
 	
@@ -139,7 +145,8 @@ public class Ability_Score {
 		}
 		
 		scoreArr[4] = scores[0];
-			
+		
+		Race.getBonus(scoreArr);
 		return scoreArr;
 	}
 	
@@ -159,7 +166,8 @@ public class Ability_Score {
 		}
 		
 		scoreArr[5] = scores[0];
-			
+		
+		Race.getBonus(scoreArr);
 		return scoreArr;
 	}
 
