@@ -45,27 +45,41 @@ public class Ability_Score {
 		CHA = cha;
 	}
 	
+	/**
+	 * ALL of the following methods create 6 random numbers, order them from greatest to least,
+	 * and then set the one that the class is supposed to be heavy on and sets it to the greatest.
+	 * @return int[]
+	 */
+	
+	/**
+	 * Calculates a class based on Strength.
+	 * @return
+	 */
 	public int[] calculateStrClass() {
-		int[] scores = new int[6];
+		int[] scores = new int[6];		//Creates temporary array of 6.
 		
 		for (int x=0; x<5; x++)
-			scores[x] = (int) (Math.random() * 18);
+			scores[x] = (int) (Math.random() * 18);	//Fills array with random numbers.
 		
-		for (int u=0; u<5; u++)
+		for (int u=0; u<5; u++)			//Continually pushes smallest numbers to the end.
 			for (int x=0; x<5; x++)
 				scores[x] = Math.max(scores[x], scores[x+1]);
 		
-		for (int x = 1; x<5; x++){
+		for (int x = 1; x<5; x++){		//Sets the last 5 scores the random numbers.
 			int r = (int)(Math.random()*5)+1;
-			scoreArr[x] = r;
+			scoreArr[r] = scores[x];
 		}
 		
-		scoreArr[0] = scores[0];
+		scoreArr[0] = scores[0];	//Sets score that the class is based on to the highest.
 		
 		Race.getBonus(scoreArr);
 		return scoreArr;
 	}
 	
+	/**
+	 * Calculates a class based on Constitution.
+	 * @return
+	 */
 	public int[] calculateConClass() {
 		int[] scores = new int[6];
 		
@@ -78,7 +92,7 @@ public class Ability_Score {
 		
 		for (int x = 1; x<5; x++){
 			int r = (int)(Math.random()*5)+1;
-			scoreArr[x] = r;
+			scoreArr[r] = scores[x];
 		}
 		
 		scoreArr[1] = scores[0];
@@ -87,6 +101,10 @@ public class Ability_Score {
 		return scoreArr;
 	}
 	
+	/**
+	 * Calculates a class based on Dexterity.
+	 * @return
+	 */
 	public int[] calculateDexClass() {
 		int[] scores = new int[6];
 		
@@ -99,7 +117,7 @@ public class Ability_Score {
 		
 		for (int x = 1; x<5; x++){
 			int r = (int)(Math.random()*5)+1;
-			scoreArr[x] = r;
+			scoreArr[r] = scores[x];
 		}
 		
 		scoreArr[2] = scores[0];
@@ -108,6 +126,10 @@ public class Ability_Score {
 		return scoreArr;
 	}
 	
+	/**
+	 * Calculates a class based on Intelligence.
+	 * @return
+	 */
 	public int[] calculateIntClass() {
 		int[] scores = new int[6];
 		
@@ -120,7 +142,7 @@ public class Ability_Score {
 		
 		for (int x = 1; x<5; x++){
 			int r = (int)(Math.random()*5)+1;
-			scoreArr[x] = r;
+			scoreArr[r] = scores[x];
 		}
 		
 		scoreArr[3] = scores[0];
@@ -129,6 +151,10 @@ public class Ability_Score {
 		return scoreArr;
 	}
 	
+	/**
+	 * Calculates a class based on Wisdom.
+	 * @return
+	 */
 	public int[] calculateWisClass() {
 		int[] scores = new int[6];
 		
@@ -141,7 +167,7 @@ public class Ability_Score {
 		
 		for (int x = 1; x<5; x++){
 			int r = (int)(Math.random()*5)+1;
-			scoreArr[x] = r;
+			scoreArr[r] = scores[x];
 		}
 		
 		scoreArr[4] = scores[0];
@@ -150,6 +176,10 @@ public class Ability_Score {
 		return scoreArr;
 	}
 	
+	/**
+	 * Calculates a class baesd on Charisma.
+	 * @return
+	 */
 	public int[] calculateChaClass() {
 		int[] scores = new int[6];
 		
@@ -162,7 +192,7 @@ public class Ability_Score {
 		
 		for (int x = 1; x<5; x++){
 			int r = (int)(Math.random()*5)+1;
-			scoreArr[x] = r;
+			scoreArr[r] = scores[x];
 		}
 		
 		scoreArr[5] = scores[0];
