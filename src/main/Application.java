@@ -72,9 +72,9 @@ public class Application extends JFrame implements ActionListener{
 		races.addActionListener((ActionListener) this);	//Give the boxes ActionListeners.
 		classes.addActionListener((ActionListener) this); //TODO James is a dumb, Application can't be an action listener... It doesn't implement it...
 		levels.addActionListener((ActionListener) this);  //TODO NOPE YOU WERE TOTALLY CORRECT I JUST SUCK
-		races.setBounds(400, 100, 100, 20);
-		classes.setBounds(400, 200, 100, 20);
-		levels.setBounds(400, 300, 100, 20);
+		races.setBounds(400, 100, 150, 20);
+		classes.setBounds(400, 200, 150, 20);
+		levels.setBounds(400, 300, 150, 20);
 		races.setVisible(true);
 		classes.setVisible(true);
 		levels.setVisible(true);
