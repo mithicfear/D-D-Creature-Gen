@@ -25,8 +25,8 @@ public class Creature {
 	 * @param l Level
 	 */
 	public Creature(Object r, Object c, Object l) {
-		Race = r.toString();
-		Class = c.toString();
+		//Race = r.toString();
+		//Class = c.toString();
 		//Level = l.toString().
 		
 		stats = new Ability_Score(Class);
