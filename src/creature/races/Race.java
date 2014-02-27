@@ -10,13 +10,13 @@ public abstract class Race {
 	public static final Race NEW = new BasicRace(1,"Example",new Ability_Score(0,0,0,2,0,2));
 	
 	public int ID;
-	public String Name;
+	public static String Name;
 	public Ability_Score Mods;
 	
-	public Race( int id, String name,Ability_Score mods){
+	public Race(int id, String name, Ability_Score mods){
 		this.ID = id;
 		if(races[id]!= null){throw new RuntimeException("Duplicate race ID on" + id);}
-		this.Name = name;
+		Race.Name = name;
 		this.Mods = mods;
 	}
 	
@@ -25,4 +25,9 @@ public abstract class Race {
 		return Name;
 	}
 	public abstract void ModStats(Ability_Score as);
+
+	public static void getBonus(int[] scoreArr) {
+		
+		
+	}
 }

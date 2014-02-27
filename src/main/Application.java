@@ -83,15 +83,15 @@ public class Application extends JFrame implements ActionListener{
 	/** This method reads what is in the boxes, and then creates a new creature based upon that information. */
 	public void actionPerformed(ActionEvent e) {
 		JComboBox wat = (JComboBox)e.getSource();
-		Object r = null;
-		Object c = null;
-		Object l = null;
+		String r = null;
+		String c = null;
+		String l = null;
 		if(wat.equals(races))
-			r = races.getSelectedItem();
+			r = (String) races.getSelectedItem();
 		else if(wat.equals(classes))
-			c = classes.getSelectedItem();
+			c = (String) classes.getSelectedItem();
 		else if(wat.equals(levels))
-			l = levels.getSelectedItem();
+			l = (String) levels.getSelectedItem();
 		
 	  //if(r == null || c == null || l == null)
 			
